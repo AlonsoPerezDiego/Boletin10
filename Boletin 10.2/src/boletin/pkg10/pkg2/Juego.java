@@ -39,7 +39,7 @@ public class Juego {
         while(rep<5|rep>15){
             rep =(int)(Math.random()*100);
         }
-        n = Integer.parseInt(JOptionPane.showInputDialog("Intenta adivinar el número en el que pensé.\nTienes " + rep + " intentos."));
+        n = Integer.parseInt(JOptionPane.showInputDialog("Intenta adivinar el número en el que pensé.\nEstá entre 1 y 50.\nTienes " + rep + " intentos."));
         rep--;
         while(rep>0&&n!=num){
             fallos();
@@ -77,7 +77,7 @@ public class Juego {
             rep =(int)(Math.random()*100);
         }
         
-        n = Integer.parseInt(JOptionPane.showInputDialog("Intenta adivinar el número en el que pensé.\nTienes " + rep + " intentos."));
+        n = Integer.parseInt(JOptionPane.showInputDialog("Intenta adivinar el número en el que pensé.\nEstá entre 1 y 50.\nTienes " + rep + " intentos."));
         rep--;
         
         while(rep>0&&n!=num){
