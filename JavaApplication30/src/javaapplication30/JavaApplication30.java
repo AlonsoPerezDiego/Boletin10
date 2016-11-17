@@ -20,26 +20,21 @@ public class JavaApplication30 {
         int ndigitos=0;
         Refac objeto=new Refac();
         numDigitos=objeto.pedirNumDigitos();
-        if(numDigitos<=0)
-        System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
-        for(int i = 1; i <= 99999; i++ )
-        {
+        for (int i = 1; i <= 99999; i++) {
             int divisionEntera = i;
- 
-            int contador=0;
- 
-            while (divisionEntera != 0)
-        {
-            divisionEntera = divisionEntera / 10;
-            contador++;
-        }
-        ndigitos=contador;
-            
-            
-            if(ndigitos==numDigitos){
-                   if (i < 4) p = true;
-            else
-            {
+
+            int contador = 0;
+
+            while (divisionEntera != 0) {
+                divisionEntera = divisionEntera / 10;
+                contador++;
+            }
+            ndigitos = contador;
+
+            if (ndigitos == numDigitos) {
+                if (i < 4)
+                    p = true;
+                else  {
             if (i % 2 == 0) p = false; 
                 else
                 {

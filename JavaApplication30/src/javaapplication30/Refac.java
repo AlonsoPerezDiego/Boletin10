@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Refac {
     
-    public int pedirNumDigitos(){
+    public int pedirNumDigitos(){//Method to ask for "numDigitos"
         int numDigitos = Integer.parseInt(JOptionPane.showInputDialog("Introducir nº de cifras."));
         while(numDigitos<0|numDigitos>5){
             numDigitos = Integer.parseInt(JOptionPane.showInputDialog("Introducir nº de cifras (Entre 0 y 5)."));
