@@ -23,56 +23,54 @@ public class Boletin102 {
         game.setName();
         int mode = Integer.parseInt(JOptionPane.showInputDialog("Introduce 1 para una partida rápida.\nIntroduce 2 para un duelo.\nIntroduce 3 para una partida rápida en modo extremo.\nIntroduce 4 para un duelo en modo extremo.\nIntroduce cualquier otro número para cerrar.\n(⌒ω⌒)"));
         while((mode>0&&mode<5)){
-            if(mode==1){
-                game.setNum();
-                game.play();
-            }
-            else if(mode==2){
-                marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar."));
-                while(marcador<=1){
-                    marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nQue sean más de 1."));
-                }
-                while(jugador!=marcador&&ordenador!=marcador){
-                    game.setNum();
-                    game.play();
-                    if(game.getVictoria()==true){
-                        jugador++;
-                    }
-                    else{
-                        ordenador++;
-                    }
-                }
-                if(jugador==marcador){
-                    JOptionPane.showMessageDialog(null, "¡Felicidades, me has conseguido ganar con una diferencia de " + (jugador-ordenador) + " puntos!\n＼(＾▽＾)／");
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Creo que te he ganado con una diferencia de " + (ordenador-jugador) + " puntos.\n(≧▽≦)");
-                }
-            }
-            else if(mode==3){
-                game.extMode();
-            }
-            else{
-                marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nPreparate para un verdadero desafio.\n( ͡° ͜ʖ ͡°)"));
-                while(marcador<=1){
-                    marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nQue sean más de 1."));
-                }
-                while(jugador!=marcador&&ordenador!=marcador){
-                    game.extMode();
-                    if(game.getVictoria()==true){
-                        jugador++;
-                    }
-                    else{
-                        ordenador++;
-                    }
-                }
-                if(jugador==marcador){
-                    JOptionPane.showMessageDialog(null, "¡Felicidades, me has conseguido ganar con una diferencia de " + (jugador-ordenador) + " puntos!\n¡Ha sido lo más impresionante que he visto!\n(⊙_⊙)");
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Creo que te he ganado con una diferencia de " + (ordenador-jugador) + " puntos, era difícil.\n(≧▽≦)");
-                }
-            }
+             switch (mode) {
+                 case 1:
+                     game.setNum();
+                     game.play();
+                     break;
+                 case 2:
+                     marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar."));
+                     while(marcador<=1){
+                         marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nQue sean más de 1."));
+                     }    while(jugador!=marcador&&ordenador!=marcador){
+                         game.setNum();
+                         game.play();
+                         if(game.getVictoria()==true){
+                             jugador++;
+                         }
+                         else{
+                             ordenador++;
+                         }
+                     }    if(jugador==marcador){
+                         JOptionPane.showMessageDialog(null, "¡Felicidades, me has conseguido ganar con una diferencia de " + (jugador-ordenador) + " puntos!\n＼(＾▽＾)／");
+                     }
+                     else{
+                         JOptionPane.showMessageDialog(null, "Creo que te he ganado con una diferencia de " + (ordenador-jugador) + " puntos.\n(≧▽≦)");
+                     }    
+                     break;
+                 case 3:
+                     game.extMode();
+                     break;
+                 case 4:
+                     marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nPreparate para un verdadero desafio.\n( ͡° ͜ʖ ͡°)"));
+                     while(marcador<=1){
+                         marcador = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de puntos máximo para ganar.\nQue sean más de 1."));
+                     }    while(jugador!=marcador&&ordenador!=marcador){
+                         game.extMode();
+                         if(game.getVictoria()==true){
+                             jugador++;
+                         }
+                         else{
+                             ordenador++;
+                         }
+                     }    if(jugador==marcador){
+                         JOptionPane.showMessageDialog(null, "¡Felicidades, me has conseguido ganar con una diferencia de " + (jugador-ordenador) + " puntos!\n¡Ha sido lo más impresionante que he visto!\n(⊙_⊙)");
+                     }
+                     else{
+                         JOptionPane.showMessageDialog(null, "Creo que te he ganado con una diferencia de " + (ordenador-jugador) + " puntos, era difícil.\n(≧▽≦)");
+                     }    
+                     break;
+             }
             mode = Integer.parseInt(JOptionPane.showInputDialog("Introduce 1 para una partida rápida.\nIntroduce 2 para un duelo.\nIntroduce 3 para una partida rápida en modo extremo.\nIntroduce 4 para un duelo en modo extremo.\nIntroduce cualquier otro número para cerrar.\n(⌒ω⌒)"));
         }
         JOptionPane.showMessageDialog(null, "Gracias por jugar " + game.getName() + ".\nMe he divertido mucho.\n(⌒ω⌒)");
